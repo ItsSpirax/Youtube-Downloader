@@ -14,6 +14,7 @@ if choice == '1':
                 'preferredcodec': 'mp3',
             }
         ],
+        'remote-components': 'ejs:github',
     }
 elif choice == '2':
     ydlp_opts = {
@@ -21,20 +22,21 @@ elif choice == '2':
         'format': 'bestvideo[ext=mp4][height<=1080]/bestvideo',
         'writethumbnail': True,
         'postprocessors': [{'key': 'FFmpegMetadata'}, {'key': 'EmbedThumbnail'}],
+        'remote-components': 'ejs:github',
     }
 else:
     ydlp_opts = {
         'outtmpl': '%USERPROFILE%/Downloads/YouTube Downloads/%(title)s.mp4',
         'format': 'bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/bestvideo+bestaudio',
         'writesubtitles': True,
-        'writeautomaticsub': True,
-        'subtitleslangs': ['en', 'auto'],
+        'subtitleslangs': ['en'],
         'writethumbnail': True,
         'postprocessors': [
             {'key': 'FFmpegMetadata'},
             {'key': 'FFmpegEmbedSubtitle'},
             {'key': 'EmbedThumbnail'},
         ],
+        'remote-components': 'ejs:github',
     }
 
 with yt_dlp.YoutubeDL(ydlp_opts) as ydlp:
