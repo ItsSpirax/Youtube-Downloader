@@ -16,6 +16,12 @@ Install the dependencies
 pip install -r requirements.txt
 ```
 
+Install Deno (PowerShell)
+
+```bash
+winget install DenoLand.Deno
+```
+
 Download and unzip the latest FFMPEG build into your root dir
 
 ```bash
